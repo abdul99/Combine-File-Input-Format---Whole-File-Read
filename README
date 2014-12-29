@@ -1,0 +1,7 @@
+This CombineFileInputFormat implementation considers default input split size
+to be 128MB (changeable). When used this input format we can control number of mappers
+ by changing the input split size.
+ 
+ When we pass a directory as input, all small files are combined to form a single input split
+ and each mapper reads each split thus formed. This input format returns File path as key and one single
+ file content as value which is of form <Text,Text>.
